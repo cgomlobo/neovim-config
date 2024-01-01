@@ -6,6 +6,7 @@ lsp_zero.on_attach(function(client, bufnr)
   lsp_zero.default_keymaps({buffer = bufnr})
 end)
 
+print("LSP works")
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {},
