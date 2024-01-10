@@ -8,19 +8,25 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({
+  use {
 	  'rose-pine/neovim',
 	  as = 'rose-pine',
 	  config = function()
 		  vim.cmd('colorscheme rose-pine')
 	  end
-  })
+  }
 
-  use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
-  use('ThePrimeagen/harpoon')
+  use 'ThePrimeagen/harpoon'
 
-  use('tpope/vim-fugitive')
+  use 'tpope/vim-fugitive'
+
+  use 'wuelnerdotexe/vim-astro'
+
+  use 'm4xshen/autoclose.nvim'
+
+  use 'lukas-reineke/lsp-format.nvim'
 
   use {
   'VonHeikemen/lsp-zero.nvim',
