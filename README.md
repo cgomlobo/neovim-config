@@ -19,9 +19,9 @@ Install a recent version of neovim, >0.7 should be enough but latest version is 
 
 2. Select the stable version branch:
 
-```
-git checkout stable
-```
+   ```
+   git checkout stable
+   ```
 
 3. Go throgh the installation steps described on [neovim documentation](https://github.com/neovim/neovim/blob/master/INSTALL.md#install-from-source), including the [prerequisites](https://github.com/neovim/neovim/blob/master/BUILD.md#build-prerequisites).
 
