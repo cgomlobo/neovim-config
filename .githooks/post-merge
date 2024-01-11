@@ -1,0 +1,13 @@
+#!/bin/sh
+
+echo "# Updating plugins..."
+
+nvim --headless -c 'so' -c 'autocmd User PackerComplete quitall' -c 'PackerSync' lua/cgomlobo/packer.lua
+
+if [ $? -eq 0 ]; then
+    echo "Done!"
+else
+    echo "Couldn't update plugins'"
+fi
+
+exit 0
