@@ -1,3 +1,5 @@
+local useTheme = "monokai"
+
 local colorConfigs = {
     monokai = function()
         vim.cmd.highlight({ "Normal", "ctermfg=231", "ctermbg=235", "cterm=NONE", "guifg=#f8f8f2", "guibg=#161616",
@@ -17,4 +19,4 @@ local function applyColor(color)
     if (colorConfig) then colorConfig() end
 end
 
-applyColor()
+applyColor(useTheme)

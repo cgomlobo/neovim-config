@@ -8,14 +8,7 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    use {
-        'ku1ik/vim-monokai',
-        as = 'monokai',
-        config = function()
-            vim.cmd('syntax enable')
-            vim.cmd('colorscheme monokai')
-        end
-    }
+    use { 'Erichain/vim-monokai-pro', as = 'monokai-pro' }
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
@@ -28,6 +21,16 @@ return require('packer').startup(function(use)
     use 'm4xshen/autoclose.nvim'
 
     use 'lukas-reineke/lsp-format.nvim'
+
+    use 'lukas-reineke/indent-blankline.nvim'
+
+    use 'HiPhish/rainbow-delimiters.nvim'
+
+    use 'mbbill/undotree'
+
+    use 'mg979/vim-visual-multi'
+
+    use 'tpope/vim-surround'
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -45,4 +48,10 @@ return require('packer').startup(function(use)
             { 'L3MON4D3/LuaSnip' },
         }
     }
+
+    -- Themes
+
+    use { 'ku1ik/vim-monokai', as = 'monokai' }
+
+    use { 'rose-pine/neovim', as = 'rose-pine' }
 end)

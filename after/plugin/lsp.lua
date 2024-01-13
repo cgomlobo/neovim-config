@@ -18,23 +18,33 @@ require('mason-lspconfig').setup({
     },
 })
 
+local lsp_config = require 'lspconfig'
+
 -- npm install -g typescript typescript-language-server
-require 'lspconfig'.tsserver.setup {}
+lsp_config.tsserver.setup {}
 
 -- pip install -U jedi-language-server
-require 'lspconfig'.jedi_language_server.setup {}
+lsp_config.jedi_language_server.setup {}
 
 -- rustup component add rust-analyzer
-require 'lspconfig'.rust_analyzer.setup {}
+lsp_config.rust_analyzer.setup {}
 
 -- https://luals.github.io/#neovim-install
-require 'lspconfig'.lua_ls.setup {}
+lsp_config.lua_ls.setup {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+}
 
 -- npm install -g @astrojs/language-server
-require 'lspconfig'.astro.setup {}
+lsp_config.astro.setup {}
 
 -- npm install -g @astrojs/language-server
-require 'lspconfig'.emmet_ls.setup {}
+lsp_config.emmet_ls.setup {}
 
 -- npm install -g svelte-language-server
-require 'lspconfig'.svelte.setup {}
+lsp_config.svelte.setup {}
