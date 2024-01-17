@@ -8,8 +8,6 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    use { 'Erichain/vim-monokai-pro', as = 'monokai-pro' }
-
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     use 'ThePrimeagen/harpoon'
@@ -31,6 +29,8 @@ return require('packer').startup(function(use)
     use 'mg979/vim-visual-multi'
 
     use 'tpope/vim-surround'
+
+    use 'terrortylor/nvim-comment'
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -54,4 +54,6 @@ return require('packer').startup(function(use)
     use { 'ku1ik/vim-monokai', as = 'monokai' }
 
     use { 'rose-pine/neovim', as = 'rose-pine' }
+
+    use { 'Erichain/vim-monokai-pro', as = 'monokai-pro' }
 end)
