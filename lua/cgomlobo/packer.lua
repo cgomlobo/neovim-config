@@ -36,6 +36,8 @@ return require('packer').startup(function(use)
 
     use 'danymat/neogen'
 
+    use 'airblade/vim-gitgutter'
+
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
