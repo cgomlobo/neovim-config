@@ -4,10 +4,6 @@ lsp_zero.on_attach(function(client, bufnr)
     -- see :help lsp-zero-keybindings
     -- to learn the available actions
     lsp_zero.default_keymaps({ buffer = bufnr })
-
-    if client.supports_method('textDocument/formatting') then
-        require('lsp-format').on_attach(client)
-    end
 end)
 
 require('mason').setup({})
@@ -18,7 +14,7 @@ require('mason-lspconfig').setup({
     },
 })
 
-local lsp_config = require 'lspconfig'
+local lsp_config = require('lspconfig')
 
 -- npm install -g typescript typescript-language-server
 lsp_config.tsserver.setup {}

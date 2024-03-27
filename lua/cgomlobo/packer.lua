@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
 
     use 'm4xshen/autoclose.nvim'
 
-    use 'lukas-reineke/lsp-format.nvim'
+    use 'stevearc/conform.nvim'
 
     use 'lukas-reineke/indent-blankline.nvim'
 
@@ -31,6 +31,10 @@ return require('packer').startup(function(use)
     use 'tpope/vim-surround'
 
     use 'terrortylor/nvim-comment'
+
+    use 'Djancyp/better-comments.nvim'
+
+    use 'danymat/neogen'
 
     use {
         'nvim-tree/nvim-tree.lua',
