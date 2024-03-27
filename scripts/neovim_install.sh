@@ -2,6 +2,9 @@
 
 TMP=$HOME/.local/neovim_tmp
 INSTALLATION_DIR=$HOME/.local/neovim
+BASEDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && cd .. && echo `pwd`)
+HOOKS_SCRIPT="${BASEDIR}/.githooks/post-merge"
+
 
 function clean() {
     # Remove temp files
@@ -66,23 +69,21 @@ fi
 # Add neovim to PATH
 echo "[+] Adding neovim to shell config file..."
 echo "
-
 # Add neovim to PATH
 export PATH=$INSTALLATION_DIR/bin:\$PATH
 " >> $CONFIG_FILE
 
-BASEDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && cd .. && echo `pwd`)
-HOOKS_SCRIPT="${BASEDIR}/.githooks/post-merge"
+cd $BASEDIR
 
 echo "[+] Installing plugins..."
 
-mv "$BASEDIR"/after "$BASEDIR"/after_bak
-mv "$BASEDIR"/init.lua "$BASEDIR"/init.lua.bak
+mv after after_bak
+mv init.lua init.lua.bak
 
 bash $HOOKS_SCRIPT > /dev/null
 
-mv "$BASEDIR"/after_bak "$BASEDIR"/after
-mv "$BASEDIR"/init.lua.bak "$BASEDIR"/init.lua
+mv after_bak after
+mv init.lua.bak init.lua
 
 clean
 
