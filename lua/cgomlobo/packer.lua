@@ -38,6 +38,8 @@ return require('packer').startup(function(use)
 
     use 'airblade/vim-gitgutter'
 
+    use 'levouh/tint.nvim'
+
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
@@ -47,7 +49,7 @@ return require('packer').startup(function(use)
 
     use 'rmagatti/auto-session'
 
-    use { 'nvim-lualine/lualine.nvim' }
+    use 'nvim-lualine/lualine.nvim'
 
     use {
         'VonHeikemen/lsp-zero.nvim',
