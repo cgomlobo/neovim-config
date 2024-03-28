@@ -47,6 +47,8 @@ return require('packer').startup(function(use)
 
     use 'rmagatti/auto-session'
 
+    use { 'nvim-lualine/lualine.nvim' }
+
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
@@ -76,4 +78,8 @@ return require('packer').startup(function(use)
     use { 'rose-pine/neovim', as = 'rose-pine' }
 
     use { 'Erichain/vim-monokai-pro', as = 'monokai-pro' }
+
+    use { 'morhetz/gruvbox' }
+
+    use { 'yorickpeterse/happy_hacking.vim', as = 'happy-hacking' }
 end)

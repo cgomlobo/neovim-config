@@ -39,7 +39,7 @@ lsp_config.lua_ls.setup {
 -- npm install -g @astrojs/language-server
 lsp_config.astro.setup {}
 
--- npm install -g @astrojs/language-server
+-- npm install -g emmet-ls
 lsp_config.emmet_ls.setup {}
 
 -- npm install -g svelte-language-server

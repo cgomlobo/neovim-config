@@ -8,6 +8,9 @@ local colorConfigs = {
             "gui=NONE" })
         vim.cmd.highlight({ "SignColumn", "ctermfg=NONE", "ctermbg=237", "cterm=NONE", "guifg=NONE", "guibg=#262626",
             "gui=NONE" })
+    end,
+    gruvbox = function()
+        vim.g.gruvbox_contrast_dark = "hard"
     end
 }
 
