@@ -1,3 +1,3 @@
 require("tint").setup({
-    tint = -60
+    tint = -30
 })
