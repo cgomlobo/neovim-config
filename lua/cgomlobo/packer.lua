@@ -84,4 +84,6 @@ return require('packer').startup(function(use)
     use { 'morhetz/gruvbox' }
 
     use { 'yorickpeterse/happy_hacking.vim', as = 'happy-hacking' }
+
+    use { 'catppuccin/nvim', as = 'catppuccin' }
 end)
