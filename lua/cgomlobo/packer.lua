@@ -10,6 +10,8 @@ return require('packer').startup(function(use)
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
+    use 'udalov/kotlin-vim'
+
     use 'ThePrimeagen/harpoon'
 
     use 'tpope/vim-fugitive'
@@ -44,9 +46,14 @@ return require('packer').startup(function(use)
 
     use 'mfussenegger/nvim-dap'
 
-    use { 'rcarriga/nvim-dap-ui', requires = {'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio'} }
+    use { 'rcarriga/nvim-dap-ui', requires = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' } }
 
     use 'theHamsta/nvim-dap-virtual-text'
+
+    use 'tpope/vim-sleuth'
+
+    -- Install neovim-remote to support backwards search
+    use 'lervag/vimtex'
 
     use {
         'nvim-tree/nvim-tree.lua',
@@ -75,6 +82,8 @@ return require('packer').startup(function(use)
             { 'L3MON4D3/LuaSnip' },
         }
     }
+
+    use 'mfussenegger/nvim-jdtls'
 
     use({
         "iamcco/markdown-preview.nvim",
