@@ -42,5 +42,8 @@ lsp_config.astro.setup {}
 -- npm install -g emmet-ls
 lsp_config.emmet_ls.setup {}
 
+--
+lsp_config.jsonls.setup {}
+
 -- npm install -g svelte-language-server
 lsp_config.svelte.setup {}
