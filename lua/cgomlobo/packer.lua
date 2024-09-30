@@ -90,6 +90,13 @@ return require('packer').startup(function(use)
         run = function() vim.fn["mkdp#util#install"]() end,
     })
 
+    use {
+        'David-Kunz/cmp-npm',
+        requires = {
+            'nvim-lua/plenary.nvim'
+        }
+    }
+
     -- Themes
 
     use { 'ku1ik/vim-monokai', as = 'monokai' }
