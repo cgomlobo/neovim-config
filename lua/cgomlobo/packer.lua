@@ -97,6 +97,12 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- Install with npm i -g live-server
+    use {
+        'barrett-ruth/live-server.nvim',
+         config = function() require('live-server').setup() end
+    }
+
     -- Themes
 
     use { 'ku1ik/vim-monokai', as = 'monokai' }
