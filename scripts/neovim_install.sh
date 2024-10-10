@@ -56,24 +56,30 @@ fi
 
 cd $HOME
 
-# Detect the shell configuration file
-if [ -f "$HOME/.bashrc" ]; then
-    CONFIG_FILE="$HOME/.bashrc"
-elif [ -f "$HOME/.zshrc" ]; then
-    CONFIG_FILE="$HOME/.zshrc"
-else
-    echo "Unable to detect shell configuration file (.bashrc, .zshrc, etc.)."
-    exit 1
+
+read -p "[+] Do you want to add nvim to path? [y/N] " answer
+
+answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
+if [[ $answer == "yes" ]] || [[ $answer == "y" ]]; then
+    # Detect the shell configuration file
+    if [ -f "$HOME/.bashrc" ]; then
+        CONFIG_FILE="$HOME/.bashrc"
+    elif [ -f "$HOME/.zshrc" ]; then
+        CONFIG_FILE="$HOME/.zshrc"
+    else
+        echo "Unable to detect shell configuration file (.bashrc, .zshrc, etc.)."
+        exit 1
+    fi
+
+    # Add neovim to PATH
+    echo "[+] Adding neovim to shell config file..."
+    echo "
+    # Add neovim to PATH
+    export PATH=$INSTALLATION_DIR/bin:\$PATH
+    " >> $CONFIG_FILE
+
+    export PATH=$INSTALLATION_DIR/bin:$PATH
 fi
-
-# Add neovim to PATH
-echo "[+] Adding neovim to shell config file..."
-echo "
-# Add neovim to PATH
-export PATH=$INSTALLATION_DIR/bin:\$PATH
-" >> $CONFIG_FILE
-
-export PATH=$INSTALLATION_DIR/bin:$PATH
 
 cd $BASEDIR
 
@@ -97,7 +103,6 @@ clean
 read -p "[+] Do you want to set up the hooks? [y/N] " answer
 
 answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
-
 if [[ $answer == "yes" ]] || [[ $answer == "y" ]]; then
     echo "[#] Setting up hooks..."
     bash $HOOKS_DIR/set_hooks.sh
